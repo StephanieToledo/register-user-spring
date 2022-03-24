@@ -26,6 +26,7 @@ public class Product {
 	private String image;
 	
 	@NotNull
+	@Column(name = "old_price")
 	private String oldPrice;
 	
 	@NotNull

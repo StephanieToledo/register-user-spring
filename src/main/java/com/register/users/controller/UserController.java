@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,9 @@ import com.register.users.repository.UserRepository;
 
 @RestController
 @RequestMapping("/")
+@CrossOrigin(origins = "*")
 public class UserController {
+	
 	
 	@Autowired(required=true)
 	UserRepository userRepository;
@@ -44,7 +47,7 @@ public class UserController {
 			userDto.setAddress(user.getAddress());
 			userDto.setNeighborhood(user.getNeighborhood());
 			userDto.setNumber(user.getNumber());
-			userDto.setComplement(user.getComplement());
+			userDto.setCep(user.getCep());
 		}
 		return getUser.isPresent() ? ResponseEntity.ok(userDto) : ResponseEntity.notFound().build();
 	}

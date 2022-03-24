@@ -11,7 +11,7 @@ public class UserDTO {
 	private String address;
 	private String number;
 	private String neighborhood;
-	private String complement;
+	private String cep;
 	
 	public Long getId() {
 		return id;
@@ -67,11 +67,11 @@ public class UserDTO {
 	public void setNeighborhood(String neighborhood) {
 		this.neighborhood = neighborhood;
 	}
-	public String getComplement() {
-		return complement;
+	public String getCep() {
+		return cep;
 	}
-	public void setComplement(String complement) {
-		this.complement = complement;
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 	
 }

@@ -30,6 +30,7 @@ public class User {
 	@Email(message="Por favor, insira um e-mail válido.")
 	private String email;
 	
+	@NotNull
 	private String phone;
 	
 	@NotNull
@@ -45,7 +46,8 @@ public class User {
 	@NotNull
 	private String neighborhood;
 	
-	private String complement;
+	@NotNull
+	private String cep;
 	
 	public User() {}
 
@@ -121,19 +123,19 @@ public class User {
 		this.neighborhood = neighborhood;
 	}
 
-	public String getComplement() {
-		return complement;
+	public String getCep() {
+		return cep;
 	}
 
-	public void setComplement(String complement) {
-		this.complement = complement;
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name_user=" + name_user + ", cpf=" + cpf + ", email=" + email + ", phone=" + phone
 				+ ", uf=" + uf + ", address=" + address + ", number=" + number + ", neighborhood=" + neighborhood
-				+ ", complement=" + complement + "]";
+				+ ", cep=" + cep + "]";
 	}
 	
 }
